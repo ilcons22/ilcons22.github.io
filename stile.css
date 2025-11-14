@@ -12,6 +12,7 @@ body {
   height: 100%;
   background-size: auto;
   background-color: #00B89F;
+  z-index: -1;
 }
 
 .container {
