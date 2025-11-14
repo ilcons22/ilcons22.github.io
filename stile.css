@@ -47,13 +47,13 @@ ul.social li {
     display: inline;
     margin-right: 14px;
 }
-u2.project {
+ul.project {
     list-style: none;
     padding: 0;
     margin: 0 0 10px 0;
 }
 
-u2.project li {
+ul.project li {
     display: inline;
     margin-right: 14px;
 }
