@@ -1,4 +1,63 @@
 /* ==========================================================================
+   Fonts (self-hosted, SIL Open Font License — see fonts/)
+   ========================================================================== */
+@font-face {
+    font-family: "Instrument Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/instrument-serif-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/instrument-serif-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2");
+}
+
+/* ==========================================================================
    Tokens
    ========================================================================== */
 :root {
@@ -772,6 +831,16 @@ a.card:hover {
 /* ==========================================================================
    Footer
    ========================================================================== */
+.footer a {
+    border-bottom: 1px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+
+.footer a:hover {
+    color: var(--ink);
+    border-color: var(--ink-faint);
+}
+
 .footer {
     max-width: var(--max);
     margin: 0 auto;
@@ -908,4 +977,42 @@ a.card:hover {
         opacity: 1;
         transform: none;
     }
+}
+
+/* ==========================================================================
+   Legal page (privacy.html)
+   ========================================================================== */
+.legal {
+    max-width: 720px;
+    padding-top: clamp(56px, 10vw, 112px);
+}
+
+.legal h1 {
+    margin: 14px 0 8px;
+    font-size: clamp(56px, 10vw, 104px);
+}
+
+.legal h2 {
+    margin: 44px 0 10px;
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.4;
+}
+
+.legal p {
+    margin: 0 0 14px;
+    color: var(--ink-soft);
+}
+
+.legal a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--line-strong);
+    transition: color .2s, border-color .2s;
+}
+
+.legal a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy — Federico Consorte</title>
+    <meta name="description" content="Privacy notice for ilcons22.github.io.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0e11" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f9e88'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23fff'%3EFC%3C/text%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="stile.css">
+
+    <script>
+        try {
+            var t = localStorage.getItem('theme');
+            if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        } catch (e) {}
+    </script>
+</head>
+<body>
+<div class="backdrop" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="grid"></div>
+</div>
+
+<header class="nav">
+    <div class="nav-inner">
+        <a class="monogram" href="./" aria-label="Back to home">FC</a>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="./">← Back to site</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+        </button>
+    </div>
+</header>
+
+<main class="legal">
+    <span class="eyebrow">Last updated · November 2026</span>
+    <h1>Privacy</h1>
+
+    <h2>Who is responsible</h2>
+    <p>Federico Consorte — <a href="mailto:federico.consorte@mail.polimi.it">federico.consorte@mail.polimi.it</a></p>
+
+    <h2>What is collected</h2>
+    <p>When you visit this site, a few details about the visit are recorded:
+       approximate city, region and country, the network you connect from
+       (for example your internet provider or organisation), browser and
+       operating system, the page that linked here, and a random visitor code
+       that changes every day.</p>
+    <p>This information is used for statistics on visits to the site, on the
+       basis of legitimate interest (Art. 6(1)(f) GDPR).</p>
+
+    <h2>Your IP address</h2>
+    <p>Your IP address is used only for a moment, to work out the approximate
+       location and network, and is <strong>not stored</strong>. The daily
+       visitor code is derived from it in a way that cannot be reversed.</p>
+
+    <h2>Service providers</h2>
+    <p>The site is hosted by GitHub (GitHub Pages). Visits are processed through
+       Cloudflare and the resulting summary is delivered to me via Telegram.
+       These providers handle data under their own privacy policies and may
+       process it outside the European Union. No data is sold or used for
+       advertising.</p>
+
+    <h2>Cookies</h2>
+    <p>This site uses no cookies and no advertising or profiling tools. If you
+       use the light/dark switch, your choice is saved in your browser only.</p>
+
+    <h2>Retention</h2>
+    <p>Visit summaries are kept for up to 12 months and then deleted.</p>
+
+    <h2>Your rights</h2>
+    <p>You can ask to access or delete data about you, or object to its
+       processing, by writing to the email address above. You also have the
+       right to lodge a complaint with the Italian Data Protection Authority
+       (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>).</p>
+</main>
+
+<footer class="footer">
+    <span>© <span id="year">2026</span> Federico Consorte</span>
+    <span>Built by hand · Hosted on GitHub Pages</span>
+</footer>
+
+<script>
+    (function () {
+        var root = document.documentElement;
+        var btn = document.querySelector('.theme-toggle');
+        function current() {
+            if (root.dataset.theme) return root.dataset.theme;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        btn.addEventListener('click', function () {
+            var next = current() === 'dark' ? 'light' : 'dark';
+            root.dataset.theme = next;
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+    })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
