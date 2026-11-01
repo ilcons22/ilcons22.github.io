@@ -375,6 +375,24 @@
     })();
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Visit statistics (see privacy.html). Opening /?me on a device excludes
+    // it from the statistics; /?notme includes it again.
+    (function () {
+        var endpoint = 'https://site-stats.7gycdhcj5b.workers.dev/';
+        try {
+            if (/[?&]me\b/.test(location.search)) localStorage.setItem('skipStats', '1');
+            if (/[?&]notme\b/.test(location.search)) localStorage.removeItem('skipStats');
+            if (localStorage.getItem('skipStats')) return;
+        } catch (e) {}
+        if (navigator.webdriver) return;
+        var data = JSON.stringify({ ref: document.referrer });
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(endpoint, data);
+        } else {
+            fetch(endpoint, { method: 'POST', body: data, keepalive: true, mode: 'no-cors' });
+        }
+    })();
 </script>
 </body>
 </html>
